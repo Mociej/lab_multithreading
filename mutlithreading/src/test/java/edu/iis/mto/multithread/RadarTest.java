@@ -26,6 +26,13 @@ class RadarTest {
         radar.notice(enemyMissle);
         verify(executor).execute(any(Runnable.class));
     }
+    @RepeatedTest(10)
+    void launchOneChangeRockets() {
+        Scud enemyMissle = new Scud();
+        BetterRadar radar = new BetterRadar(batteryMock, executor,20);
+        radar.notice(enemyMissle);
+        verify(executor).execute(any(Runnable.class));
+    }
 
 
 }
